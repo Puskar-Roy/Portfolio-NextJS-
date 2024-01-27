@@ -1,7 +1,8 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState,useContext } from "react";
 import { Link as LinkScroll, scroller } from "react-scroll";
+import { ThemeContext } from "@/context/ThemeContext";
 
 const menuItems = [
   {
@@ -49,6 +50,7 @@ function CreateMenus({ activeLink, getMenuItems, setActiveLink }) {
 }
 
 export default function Navbar() {
+  const { theme, toggle } = useContext(ThemeContext);
   const [activeLink, setActiveLink] = useState("home");
   const [scrollActive, setScrollActive] = useState(false);
 
@@ -83,13 +85,14 @@ export default function Navbar() {
           </ul>
           <div className="col-start-10 col-end-12 font-medium flex justify-center items-center">
             <button
-              onClick={() =>
-                scroller.scrollTo("contact", {
-                  duration: 1500,
-                  delay: 100,
-                  smooth: true,
-                })
-              }
+              // onClick={() =>
+              //   scroller.scrollTo("contact", {
+              //     duration: 1500,
+              //     delay: 100,
+              //     smooth: true,
+              //   })
+              // }
+              onClick={toggle}
               className="py-3 px-6 border-[2px] bg-[#fff] border-color text-[#000] font-semibold rounded-lg text-xl tracking-widest boder-color-md transition-all outline-none"
             >
               Contact Me

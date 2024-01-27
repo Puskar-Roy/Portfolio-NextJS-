@@ -8,17 +8,28 @@
 :root{ 
     /* --purpleColor: #915ffe;  */
     --purpleColor: crimson;
+    /* --dark:#ffffff; */
+    --textColor: #000000;
+}
+
+.light{
+      --purpleColor: crimson;
     --dark:#ffffff;
     --textColor: #000000;
+}
+
+.dark{
+      --purpleColor: #915ffe;
+    --dark:#0f172a;
+    --textColor: #ffffff;
 }
 
 
 html {
   font-family: "Rubik", sans-serif;
 }
-body {
-  background: var(--dark)
-}
+
+
 p {
   color:  #000000;
 }
@@ -175,7 +186,9 @@ circle {
   /* background-color: rgba(47, 171, 115, 1) !important; */
     background-color: var(--purpleColor) !important;
 }
-
+.bgColorr{
+  background: var(--dark);
+}
 .bgColor{
   color: var(--textColor);
 }

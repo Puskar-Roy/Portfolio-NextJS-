@@ -1,4 +1,4 @@
-
+"use client";
 import React, { createContext, useEffect, useState, ReactNode } from "react";
 
 interface ThemeContextProps {
@@ -9,7 +9,6 @@ interface ThemeContextProps {
 export const ThemeContext = createContext<ThemeContextProps | undefined>(
   undefined
 );
-
 
 interface ThemeContextProviderProps {
   children: ReactNode;
@@ -36,6 +35,8 @@ export const ThemeContextProvider: React.FC<ThemeContextProviderProps> = ({
 
   useEffect(() => {
     localStorage.setItem("theme", theme);
+    console.log(theme);
+    
   }, [theme]);
 
   return (

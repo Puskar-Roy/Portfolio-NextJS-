@@ -1,8 +1,9 @@
 import CommonLayout from '@/components/client-view/common-layout'
 import './globals.css'
 import { Inter } from 'next/font/google'
-
+import { ThemeContextProvider } from "@/context/ThemeContext";
 const inter = Inter({ subsets: ['latin'] })
+import ThemeProvider from "@/providers/ThemeProvider";
 
 export const metadata = {
   title: 'Create Next App',
@@ -13,8 +14,12 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <CommonLayout>{children}</CommonLayout>
+        <ThemeContextProvider>
+          <ThemeProvider>
+            <CommonLayout>{children}</CommonLayout>
+          </ThemeProvider>
+        </ThemeContextProvider>
       </body>
     </html>
-  )
+  );
 }
